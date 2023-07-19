@@ -1,6 +1,6 @@
 // See https://kit.svelte.dev/docs/types#app
 // for information about these interfaces
-import type { PrismaClient } from "@prisma/client";
+import type { PrismaClient, Usuarios } from "@prisma/client";
 
 declare global {
   namespace App {
@@ -39,6 +39,15 @@ declare global {
     nombre: string;
     apellido: string;
     correo: string;
+  };
+
+  type VerFacturas = {
+    factura_id: number;
+    casillero: number;
+    cliente: Usuarios;
+    fecha: string;
+    pagado: boolean;
+    total: number;
   };
 }
 

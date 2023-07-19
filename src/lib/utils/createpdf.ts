@@ -225,7 +225,7 @@ export async function createInvoice(
   autoTable(doc, {
     didDrawPage: function (data) {
       let str =
-        "507BuyServices | Teléfono +507 6362-8879\nLa Chorrera, Barrio Balboa, Ave Ricardo J. Alfaro (Calle Rockefeller), Pb Autoservicio Mario";
+        "507BuyServices | Teléfono +507 \nDos Mares Calle Circunvalación, PH Elite 500 local 2, dentro de 'Baixing Market'";
       doc.setFontSize(11);
 
       var pageSize = doc.internal.pageSize;
