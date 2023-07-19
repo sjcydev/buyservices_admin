@@ -80,8 +80,8 @@
       </Text>
       <Text style={paragraph}>
         El sistema de facturación se encuentra en este enlace <Link
-          href="https://admin.xcargoservices.com/"
-          >https://admin.dropcargoexpress.com/</Link
+          href="https://admin.507buyservices.com/"
+          >https://admin.507buyservices.com/</Link
         >. Al entrar al enlace, te mandara a iniciar sesión. Usa los detalles de
         la cuenta que se encuentra en la sección de abajo.
       </Text>

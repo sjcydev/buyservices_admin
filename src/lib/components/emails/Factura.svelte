@@ -154,7 +154,7 @@
       <Text style={paragraph}
         >Puedes encontrar tambien adjuntado la factura con más detalles.</Text
       >
-      <Text style={paragraph}>Gracias por preferir XCargoServices!</Text>
+      <Text style={paragraph}>Gracias por preferir 507BuyServices!</Text>
     </Container>
   </Container>
 </Html>

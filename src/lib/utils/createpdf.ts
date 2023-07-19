@@ -181,16 +181,16 @@ export async function createInvoice(
     head: [["Terminos y Condiciones"]],
     body: [
       [
-        "\u2022 XCargoServices aplica cargos por peso o volumen para cargas extra dimensionada.",
+        "\u2022 507BuyServices aplica cargos por peso o volumen para cargas extra dimensionada.",
       ],
       [
-        "\u2022 XCargoServices no se hará responsable por daño en mercancia mal empacada por exportación.",
+        "\u2022 507BuyServices no se hará responsable por daño en mercancia mal empacada por exportación.",
       ],
       [
-        "\u2022 XCargoServices no se hace responsable por mercancia extraviada entregada por USPS.",
+        "\u2022 507BuyServices no se hace responsable por mercancia extraviada entregada por USPS.",
       ],
       [
-        "\u2022 XCargoServices no se hace responsable por paquetes, despues de 1 mes de no ser retirado en la oficina.",
+        "\u2022 507BuyServices no se hace responsable por paquetes, despues de 1 mes de no ser retirado en la oficina.",
       ],
     ],
     headStyles: {
@@ -213,9 +213,9 @@ export async function createInvoice(
     head: [["Datos Bancarios para Transferencia"]],
     body: [
       ["Banco General"],
-      ["Nombre: XCargoServices"],
-      ["Tipo de Cuenta: Ahorros"],
-      ["Cuenta: 04-72-96-001350-5"],
+      ["Nombre: 507BuyServices"],
+      ["Tipo de Cuenta: "],
+      ["Cuenta: "],
     ],
     styles: { halign: "center" },
     pageBreak: "avoid",
@@ -225,7 +225,7 @@ export async function createInvoice(
   autoTable(doc, {
     didDrawPage: function (data) {
       let str =
-        "XCargoServices | Teléfono +507 6362-8879\nLa Chorrera, Barrio Balboa, Ave Ricardo J. Alfaro (Calle Rockefeller), Pb Autoservicio Mario";
+        "507BuyServices | Teléfono +507 6362-8879\nLa Chorrera, Barrio Balboa, Ave Ricardo J. Alfaro (Calle Rockefeller), Pb Autoservicio Mario";
       doc.setFontSize(11);
 
       var pageSize = doc.internal.pageSize;
