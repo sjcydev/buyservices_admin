@@ -5,7 +5,9 @@ export const load: PageServerLoad = async ({ locals }) => {
   const facturas = prisma.facturas.findMany({
     include: {
       cliente: true,
+      trackings: true,
     },
+    orderBy: [{ factura_id: "desc" }],
   });
 
   return { facturas };

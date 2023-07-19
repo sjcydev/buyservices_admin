@@ -8,6 +8,7 @@
     faCircleCheck,
     faDownload,
   } from "@fortawesome/free-solid-svg-icons";
+  import axios from "axios";
 
   export let data: { facturas: VerFacturas[] };
 
@@ -23,6 +24,10 @@
   onDestroy(() => {
     unsubscribe();
   });
+
+  async function marcarPagado(factura_id: number, pagado: boolean) {
+    await axios.post(`/api/facturas/actualizar/${factura_id}`, { pagado });
+  }
 </script>
 
 <svelte:head>
@@ -67,13 +72,20 @@
           <td>{factura.cliente.sucursal}</td>
           <td>${factura.total.toFixed(2)}</td>
           <td class="text-lg text-center whitespace-nowrap w-1">
-            <button type="button" on:click={() => {}}>
-              {#if factura.pagado}
+            <label class="swap swap-rotate">
+              <input
+                type="checkbox"
+                checked={factura.pagado}
+                on:change={() =>
+                  marcarPagado(factura.factura_id, factura.pagado)}
+              />
+              <div class="swap-on">
                 <Fa class="text-green-500 text-center" icon={faCircleCheck} />
-              {:else}
+              </div>
+              <div class="swap-off">
                 <Fa class="text-red-500 text-center" icon={faCircleXmark} />
-              {/if}
-            </button>
+              </div>
+            </label>
           </td>
           <td class="text-right whitespace-nowrap w-1"
             ><button type="button"><Fa icon={faDownload} /></button></td

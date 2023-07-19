@@ -5,7 +5,7 @@
   import { goto } from "$app/navigation";
 
   export let data: { usuario: Usuarios };
-  console.log(data);
+
   let usuario = {
     id: data.usuario.id,
     nombre: data.usuario.nombre,
