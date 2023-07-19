@@ -16,6 +16,7 @@ export const POST = async ({ request }: RequestEvent) => {
         nombre: cliente.nombre,
         casillero: info.casillero,
         trackings: info.trackings,
+        sucursal: cliente.sucursal,
       },
     });
     const text = render({
@@ -24,6 +25,7 @@ export const POST = async ({ request }: RequestEvent) => {
         nombre: cliente.nombre,
         casillero: info.casillero,
         trackings: info.trackings,
+        sucursal: cliente.sucursal,
       },
       options: {
         plainText: true,

@@ -6,7 +6,6 @@
     Hr,
     Html,
     Preview,
-    Section,
     Text,
     Img,
     Link,
@@ -20,10 +19,16 @@
   export let nombre: String;
   export let casillero: String;
   export let trackings: Trackings[];
+  export let sucursal: String;
 
   let ubicacion =
-    "La Chorrera, Barrio Balboa, Ave Ricardo J. Alfaro (Calle Rockefeller), Pb Autoservicio Mario";
-  let maps = "https://maps.app.goo.gl/6umy2Deq1bqTzmZT6?g_st=ic";
+    "Dos Mares Calle Circunvalación, PH Elite 500 local 2, dentro de 'Baixing Market'";
+  let maps = "https://goo.gl/maps/bmxTDFpGHTRMLGCR9";
+
+  if (sucursal === "bethania") {
+    ubicacion = "Camino Real de Bethania, Casa 604";
+    maps = "https://goo.gl/maps/4BLyK6pYHLsF7NbNA";
+  }
 
   const fontFamily =
     '-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif';
