@@ -9,6 +9,7 @@
     faDownload,
   } from "@fortawesome/free-solid-svg-icons";
   import axios from "axios";
+  import { createInvoice } from "$lib/utils/createpdf";
 
   export let data: { facturas: VerFacturas[] };
 
@@ -88,7 +89,16 @@
             </label>
           </td>
           <td class="text-right whitespace-nowrap w-1"
-            ><button type="button"><Fa icon={faDownload} /></button></td
+            ><button
+              type="button"
+              on:click={() =>
+                createInvoice(
+                  factura,
+                  factura.factura_id,
+                  factura.cliente,
+                  true
+                )}><Fa icon={faDownload} /></button
+            ></td
           >
         </tr>
       {/each}

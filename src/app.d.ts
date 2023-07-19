@@ -25,13 +25,13 @@ declare global {
     peso: number;
     base: number;
     precio: number;
-    reset: Function;
+    reset?: Function;
   };
 
   type Factura = {
     casillero: string;
     trackings: Trackings[];
-    reset: Function;
+    reset?: Function;
   };
 
   type Cliente = {
