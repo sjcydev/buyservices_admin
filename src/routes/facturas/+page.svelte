@@ -10,8 +10,12 @@
   } from "@fortawesome/free-solid-svg-icons";
   import axios from "axios";
   import { createInvoice } from "$lib/utils/createpdf";
+  import { paginate, LightPaginationNav } from "svelte-paginate";
 
   export let data: { facturas: VerFacturas[] };
+
+  let pageSize = 25;
+  let currentPage = 1;
 
   const searchUsuarios = data.facturas.map((factura: VerFacturas) => ({
     ...factura,
@@ -20,6 +24,11 @@
 
   const searchStore = createSearchStore(searchUsuarios);
 
+  $: paginatedItems = paginate({
+    items: $searchStore.filtered,
+    pageSize,
+    currentPage,
+  });
   const unsubscribe = searchStore.subscribe((model) => searchHandler(model));
 
   onDestroy(() => {
@@ -43,8 +52,18 @@
       class="input input-bordered input-primary w-full"
       placeholder="Busqueda"
       bind:value={$searchStore.search}
+      on:input={() => (currentPage = 1)}
     />
   </div>
+
+  <LightPaginationNav
+    totalItems={$searchStore.filtered.length}
+    {pageSize}
+    {currentPage}
+    limit={1}
+    showStepOptions={true}
+    on:setPage={(e) => (currentPage = e.detail.page)}
+  />
 
   <table class="table table-sm table-auto">
     <thead>
@@ -62,7 +81,7 @@
       </tr>
     </thead>
     <tbody>
-      {#each $searchStore.filtered as factura, idx}
+      {#each paginatedItems as factura, idx}
         <tr class="hover:bg-base-200">
           <td>{factura.fecha}</td>
           <th>{factura.factura_id}</th>
@@ -118,3 +137,9 @@
     </tfoot>
   </table>
 </div>
+
+<style>
+  :global(.pagination-nav) {
+    box-shadow: none !important;
+  }
+</style>

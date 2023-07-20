@@ -5,9 +5,9 @@
   import { faTrashCan } from "@fortawesome/free-solid-svg-icons";
   import { createInvoice } from "$lib/utils/createpdf";
 
-  let info: Factura = {
+  let info = {
     casillero: "",
-    trackings: [],
+    trackings: [] as Trackings[],
     reset: function () {
       this.casillero = "";
       this.trackings = [];
@@ -34,7 +34,7 @@
     apellido: "",
     correo: "",
     sucursal: "",
-  };
+  } satisfies Cliente;
 
   function resetCliente() {
     cliente.id = 0;
