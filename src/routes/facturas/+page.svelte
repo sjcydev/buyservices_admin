@@ -15,7 +15,7 @@
 
   const searchUsuarios = data.facturas.map((factura: VerFacturas) => ({
     ...factura,
-    searchTerm: `${factura.factura_id} ${factura.cliente.casillero}`,
+    searchTerm: `${factura.cliente.casillero}`,
   }));
 
   const searchStore = createSearchStore(searchUsuarios);
