@@ -39,6 +39,7 @@ declare global {
     nombre: string;
     apellido: string;
     correo: string;
+    sucursal: "dorado" | "bethania";
   };
 
   type VerFacturas = {

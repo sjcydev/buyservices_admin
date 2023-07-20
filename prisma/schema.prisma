@@ -27,7 +27,7 @@ model Facturas {
   casillero  Int
   fecha      String
   pagado     Boolean     @default(false)
-  cliente    Usuarios    @relation(fields: [casillero], references: [id])
+  cliente    Usuarios    @relation(fields: [casillero], references: [id], onDelete: Cascade)
   trackings  Trackings[]
   total      Float       @default(0) @db.Float
 

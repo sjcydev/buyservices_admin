@@ -215,8 +215,8 @@ export async function createInvoice(
     body: [
       ["Banco General"],
       ["Nombre: 507BuyServices"],
-      ["Tipo de Cuenta: "],
-      ["Cuenta: "],
+      ["Tipo de Cuenta: Ahorros"],
+      ["Cuenta: 04-95-98-323727-8"],
     ],
     styles: { halign: "center" },
     pageBreak: "avoid",
@@ -225,8 +225,14 @@ export async function createInvoice(
 
   autoTable(doc, {
     didDrawPage: function (data) {
-      let str =
-        "507BuyServices | Teléfono +507 \nDos Mares Calle Circunvalación, PH Elite 500 local 2, dentro de 'Baixing Market'";
+      let ubicacion =
+        "Dos Mares Calle Circunvalación, PH Elite 500 local 2, dentro de 'Baixing Market'";
+
+      if (cliente.sucursal === "bethania") {
+        ubicacion = "Camino Real de Bethania, Casa 604";
+      }
+
+      let str = `507BuyServices | Teléfono +507 \n${ubicacion}`;
       doc.setFontSize(11);
 
       var pageSize = doc.internal.pageSize;
