@@ -95,3 +95,9 @@ ${usuario.cedula} ${usuario.telefono} ${usuario.correo}`,
     </tfoot>
   </table>
 </div>
+
+<style>
+  :global(.pagination-nav) {
+    box-shadow: none !important;
+  }
+</style>
