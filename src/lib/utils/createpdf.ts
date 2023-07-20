@@ -232,7 +232,7 @@ export async function createInvoice(
         ubicacion = "Camino Real de Bethania, Casa 604";
       }
 
-      let str = `507BuyServices | Teléfono +507 \n${ubicacion}`;
+      let str = `507BuyServices | Teléfono +507 6858-1291\n${ubicacion}`;
       doc.setFontSize(11);
 
       var pageSize = doc.internal.pageSize;
