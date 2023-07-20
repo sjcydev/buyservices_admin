@@ -29,7 +29,7 @@ declare global {
   };
 
   type Factura = {
-    casillero: string;
+    casillero: string | number;
     trackings: Trackings[];
     reset?: Function;
   };
@@ -39,7 +39,7 @@ declare global {
     nombre: string;
     apellido: string;
     correo: string;
-    sucursal: "dorado" | "bethania";
+    sucursal: "dorado" | "bethania" | string;
   };
 
   type VerFacturas = {
