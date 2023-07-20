@@ -41,7 +41,7 @@ model Trackings {
   peso            Int
   base            Float
   precio          Float
-  factura         Facturas @relation(fields: [factura_id], references: [factura_id])
+  factura         Facturas @relation(fields: [factura_id], references: [factura_id], onDelete: Cascade)
 
   @@index([factura_id], map: "Trackings_factura_id_fkey")
 }
