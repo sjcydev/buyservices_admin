@@ -18,6 +18,7 @@ export async function createInvoice(
   cliente: Cliente,
   descargar = false
 ) {
+  console.log(info);
   let trackings = info.trackings.map(
     ({ numero_tracking, peso, base, precio }) => [
       numero_tracking,
