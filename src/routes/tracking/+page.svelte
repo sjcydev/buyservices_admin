@@ -81,6 +81,7 @@
             <thead>
               <tr>
                 <th>Fecha</th>
+                <th>Factura Nro.</th>
                 <th>Casillero</th>
                 <th>Cliente</th>
                 <th>Numero de Tracking</th>
@@ -93,6 +94,7 @@
             <tbody class="text-black">
               <tr>
                 <td>{tracking.factura.fecha}</td>
+                <td>{tracking.factura.factura_id}</td>
                 <th>{tracking.factura.cliente.casillero}</th>
                 <td
                   >{tracking.factura.cliente.nombre}
