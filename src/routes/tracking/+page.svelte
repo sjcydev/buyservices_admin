@@ -81,7 +81,9 @@
             <thead>
               <tr>
                 <th>Fecha</th>
+                <th>Factura Nro.</th>
                 <th>Casillero</th>
+                <th>Cliente</th>
                 <th>Numero de Tracking</th>
                 <th class="text-right">Peso (lbs)</th>
                 <th class="text-right">Precio Total</th>
@@ -92,7 +94,12 @@
             <tbody class="text-black">
               <tr>
                 <td>{tracking.factura.fecha}</td>
-                <th>{tracking.factura.casillero}</th>
+                <td>{tracking.factura.factura_id}</td>
+                <th>{tracking.factura.cliente.casillero}</th>
+                <td
+                  >{tracking.factura.cliente.nombre}
+                  {tracking.factura.cliente.apellido}</td
+                >
                 <td>{tracking.numero_tracking}</td>
                 <td class="text-right">{tracking.peso}</td>
                 <td class="text-right">${tracking.precio}</td>
